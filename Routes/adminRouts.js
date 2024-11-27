@@ -7,7 +7,7 @@ const { authToken } = require("../middleware/auth")
 
 router.route("/admincreate").post(admin)
 router.route("/adminlogin").post(adminLogin)
-router.route("/admins").get(authToken, getAllAdmin)
+router.route("/admins").get( getAllAdmin)
 
 
 module.exports = router
