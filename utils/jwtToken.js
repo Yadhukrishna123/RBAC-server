@@ -4,12 +4,12 @@ exports.getToken =async (req, res) => {
     const adminId = req.admin._id
     const options ={
         id:adminId,
-        time:Date.now
+        time:Date.now()
     }
 
     const cookieParams = { httpOnly: true, sameSite: "none", secure: true };
 
-    const token = await jwt.sign(options, process.env.JWT_SECRET_KEY, {expiresIn:'5min'})
+    const token = await jwt.sign(options, process.env.jwt_secret_key, {expiresIn:'5min'})
 
     if(!token){
         return res.status(500).json({
